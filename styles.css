@@ -63,15 +63,111 @@ body {
   width: 100vw;
   font-family: Roboto;
   display: grid;
-  grid: 20% 80% / 30% 70%;
+  grid: 20% 80% / 400px auto;
   grid-template-areas: 
     "sidebar header"
     "sidebar content";
-  place-items: stretch;
+  place-items: stretch
 }
 
 .header {
   grid-area: header;
+  padding: 12px 36px;
+  display: grid;
+  grid: auto auto / auto auto;
+  grid-template-areas: 
+    "search account"
+    "greeting actions";
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 6px;
+}
+
+.search {
+  grid-area: search;
+  display: grid;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  width: 100%;
+}
+
+.submit-button-container {
+  cursor: pointer;
+  border: none;
+}
+
+.hidden-submit-input {
+  display: none;
+}
+
+input[type="text"] {
+  font-size: 1.25rem;
+  background-color: #E2E8F0FF;
+  border-radius: 16px;
+  border-style: none;
+  padding: 0 16px;
+  width: 100%;
+  margin: 0 16px;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #1992D4FF;
+  outline: none;
+}
+
+.account {
+  grid-area: account;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+}
+
+.account-img {
+  height: 48px;
+  width: auto;
+}
+
+.account-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.greeting {
+  grid-area: greeting;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.greeting-img {
+  height: 72px;
+  width: auto;
+}
+
+.greeting-text {
+  font-weight: bold;
+}
+
+.actions {
+  grid-area: actions;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.actions button {
+  background-color: #1992D4FF;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  margin: 0 16px;
+  padding: 8px 0;
 }
 
 .sidebar {
@@ -79,20 +175,113 @@ body {
   background-color: #1992D4FF;
   color: white;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-title {
   display: grid;
   grid-template-columns: max-content auto;
-  font-size: 2em;
 }
 
-.sidebar p {
-  line-height: 2em;
+.sidebar-title div {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 12px;
+}
 
+.sidebar ul {
+  list-style-type: none;
+  padding: 32px 0;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+.sb-list-icon {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sb-list-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .content {
   grid-area: content;
   background-color: #E2E8F0FF;
+  display: grid;
+  grid-template-columns: 72% 28%;
+  padding: 24px;
 }
+
+.content-cards {
+  display: grid;
+  grid: auto repeat(3, 1fr) / repeat(2, 1fr);
+  gap: 12px;
+}
+
+.content-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.content-card {
+  background-color: white;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  overflow: hidden;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edge {
+  background-color: #D12130;
+}
+
+.project {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.project p {
+  color: #636363;
+  font-weight: 450;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: auto;
+}
+
+.content-side {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.announcements {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
