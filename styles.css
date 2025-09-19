@@ -236,6 +236,9 @@ input[type="text"]:focus {
 .content-title {
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+.content-cards .content-title {
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -279,6 +282,7 @@ input[type="text"]:focus {
 .content-side {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .announcements {
@@ -317,4 +321,40 @@ input[type="text"]:focus {
 
 .divider {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+}
+
+.profiles {
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+  display: grid;
+  grid: repeat(4, 1fr) / auto 1fr;
+  gap: 24px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  height: 48px;
+  width: auto;
+  justify-self: center;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.profile-name {
+  font-weight: bold;
+}
+
+.profile-desc {
+  color: #636363;
+  font-weight: 450;
 }
